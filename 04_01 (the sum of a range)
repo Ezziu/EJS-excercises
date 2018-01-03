@@ -1,10 +1,14 @@
 function range(start, end, step) {
-		var arr = [];
-		if (step == undefined) step = 1;
-	if (step > 0) {
+	var arr = [];
+	if (step == undefined) step = 1;
+	if (start > end && step == 1) {
+  	    for (var i = start; i >= end; i--)
+    		arr.push(i);
+    }
+    else if(step > 0) {
   	    for (var i = start; i <= end; i+=step)
     		arr.push(i);
-    			}
+    }
 	else  {
    		for (var i = start; i >= end; i+=step)
    			arr.push(i);
@@ -23,7 +27,9 @@ console.log(range(2,5));
 // [2, 3, 4, 5]
 console.log(range(2,5,2));
 // [2, 4]
-console.log(range(10,1,-1));
+console.log(range(10,1,-2));
+// [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+console.log(range(10,1));
 // [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 console.log(sum(range(10,1,-1)));
 // 55
