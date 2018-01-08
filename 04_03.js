@@ -6,8 +6,6 @@ function arrayToList(array){
   return list;
 }
 
-console.log(typeof list);
-
 function listToArray(list){
   var arr = [];
   for (var node = list; node; node = node.rest){ 
@@ -28,6 +26,16 @@ function nth(list, pos){
 	list = arr[pos];  
   }
   return list;
+}
+
+function nth(list, pos){
+  if (pos == 0)
+    return list.value;
+  else if
+    (list.rest == null)
+    list = undefined;
+  else
+   return nth(list.rest, pos-1);
 }
 
 console.log(arrayToList([10, 20, 30]));
