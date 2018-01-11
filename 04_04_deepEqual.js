@@ -10,11 +10,12 @@ function deepEqual(val1, val2){
       var xInVal1=0;
       var xInVal2=0;
     
-      for (x in val1) {
-        xInVal1 += 1;
-       } 
-      for (x in val2){
+      for (x in val1) 
+        xInVal1 += 1;  
+      for (x in val2)
         xInVal2 += 1; 
+        
+      for (x in val2){
         console.log(xInVal2);
           if (deepEqual(val1[x], val2[x]) !== true)
             return false;  
@@ -25,15 +26,3 @@ function deepEqual(val1, val2){
       
   }
   else return false;
-}  
-
-
-
-var obj = {here: {is: "an"}, object: 2};
-
-console.log(deepEqual(obj, obj));
-// → true
-console.log(deepEqual(obj, {here: 1, object: 2}));
-// → false
-console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
-// → true
